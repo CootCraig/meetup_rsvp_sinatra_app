@@ -9,6 +9,6 @@ get '/' do
 end
 
 post '/' do
-	@rsvp_value = MeetupRsvp.instance.FetchYes('http://www.meetup.com/Not-Just-Ruby/calendar/14707099/')
+	@rsvp_value = MeetupRsvp.instance.FetchYes('http://www.meetup.com/csopensource/calendar/14714249/')
 	haml :rsvp_yes
 end

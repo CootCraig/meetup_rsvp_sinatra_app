@@ -8,7 +8,9 @@ files: /home/craig/dev/NJR Jumpstart/Sinatra/Sinatra rsvp 01/Sinatra rsvp 01.rb
 files: /home/craig/dev/NJR Jumpstart/Sinatra/Sinatra rsvp 01/views/index.haml
 files: /home/craig/dev/NJR Jumpstart/Sinatra/Sinatra rsvp 01/views/rsvp_yes.haml
 files: /home/craig/dev/NJR Jumpstart/Sinatra/Sinatra rsvp 01/MeetupRsvp.rb
+files: /home/craig/dev/NJR Jumpstart/Sinatra/Sinatra rsvp 01/rsvp.haml
 c2e.convert_iso: 0
+recent_files: file:///home/craig/dev/NJR%20Jumpstart/Sinatra/Sinatra%20rsvp%2001/rsvp.haml
 recent_files: file:///home/craig/dev/NJR%20Jumpstart/Sinatra/Sinatra%20rsvp%2001/MeetupRsvp.rb
 recent_files: file:///home/craig/dev/NJR%20Jumpstart/Sinatra/Sinatra%20rsvp%2001/views/rsvp_yes.haml
 snippets_show_as_menu: 1
@@ -48,5 +50,5 @@ outputb_show_all_output: 0
 spell_check_default: 1
 fb_show_backup_f: 0
 opendir: file:///home/craig/dev/NJR%20Jumpstart/Sinatra/Sinatra%20rsvp%2001
-savedir: file:///home/craig/dev/NJR%20Jumpstart/Sinatra/Sinatra%20rsvp%2001/views
+savedir: file:///home/craig/dev/NJR%20Jumpstart/Sinatra/Sinatra%20rsvp%2001
 adv_open_matchname: 0
