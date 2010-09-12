@@ -1,9 +1,9 @@
 !!! Strict
 %html
 	%head
-		%title Sinatra Meetup RSVP
+		%title Meetup RSVP List
 	%body
-		%h1 Post page
 		%p
 			%a{ :href => '/' } Enter a new Meeting URL
-		= @form_params.to_s
+		%h1 Meetup RSVP List
+		%ol= @rsvp_value
