@@ -12,25 +12,21 @@ class MeetupRsvp
 	end
 	
 	def FetchYes(meetingUrl)
-		if 1
-			test_data = [ {:name => 'Alice Brown', :image_url => '/alice/brown'},
-				{:name => 'Chris Dent', :image_url => '/chris/dent'},
-				{:name => 'Ellen Fargo', :image_url => '/ellen/fargo'},
-				{:name => 'Grant Hume', :image_url => '/grant/hume'} ]
-			return test_data.inject('') do |all_persons, person|
-				all_persons << " #{@haml_engine.render(Object.new,{:name => person[:name], :image_url => person[:image_url]})}"
-			end
-		end
-		meetingPage = Nokogiri::HTML(open(MeetupUri))
+		meetingPage = Nokogiri::HTML(open(meetingUrl))
 		yesNodeList = meetingPage.css('li.D_rsvpAttendeeGroup div.D_yes')
 		unless yesNodeList
 			return "<p>No Yes RSVP found at [#{meetingUrl}]</p>"
 		end
+		rsvp_yes_list_html = ""
 		yesNodeList.first.parent.css('ul.D_feedItems li.D_feedItem').each do |memberNode|
 			name = memberNode.css('span.D_name a').first.content
+			name << memberNode.css('span.D_chapterTitle').first if memberNode.css('span.D_chapterTitle').first
+			memberUrl = memberNode.css('span.D_name a').first.attributes['href'].value
+			memberPage = Nokogiri::HTML(open(memberUrl))
+			pictureUrl = memberPage.css('div#D_memberProfile img.D_memberProfilePhoto').first.attributes['src'].value
+			rsvp_yes_list_html << " #{@haml_engine.render(Object.new,{:name => name, :image_url => pictureUrl})}"
 		end
-		
-		"MeetupRsvp.FetchYes called with #{meetingUrl}"
+		rsvp_yes_list_html
 	end
 end
 
